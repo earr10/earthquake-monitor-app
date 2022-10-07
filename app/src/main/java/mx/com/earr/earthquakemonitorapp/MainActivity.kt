@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         eqList.add(Earthquake("1", "BR", 5.8, 23485955, -102.45, 23.90))
         eqList.add(Earthquake("1", "IT", 5.8, 23485955, -102.45, 23.90))
         eqList.add(Earthquake("1", "JP", 5.8, 23485955, -102.45, 23.90))
-        eqList.add(Earthquake("1", "CH", 5.8, 23485955, -102.45, 23.90))
 
         val adapter = EarthquakeAdapter()
         binding.eqRecycler.adapter = adapter
