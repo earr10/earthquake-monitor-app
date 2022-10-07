@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="4dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/eqMagnitudeText"
-        android:layout_width="wrap_content"
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:text="4.3" />
+        android:padding="4dp">
 
-    <ImageView
-        android:id="@+id/eqArrowImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:contentDescription="@string/image_description"
-        android:padding="8dp"
-        android:src="@drawable/ic_arrow_forward" />
+        <TextView
+            android:id="@+id/eqMagnitudeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="4.3" />
 
-    <TextView
-        android:id="@+id/eqPlaceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toStartOf="@id/eqArrowImage"
-        android:layout_toEndOf="@+id/eqMagnitudeText"
-        android:padding="8dp"
-        android:textSize="20sp"
-        tools:text="80 km. E Jalisco" />
+        <ImageView
+            android:id="@+id/eqArrowImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/image_description"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_forward" />
+
+        <TextView
+            android:id="@+id/eqPlaceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/eqArrowImage"
+            android:layout_toEndOf="@+id/eqMagnitudeText"
+            android:padding="8dp"
+            android:textSize="20sp"
+            tools:text="80 km. E Jalisco" />
 
 
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

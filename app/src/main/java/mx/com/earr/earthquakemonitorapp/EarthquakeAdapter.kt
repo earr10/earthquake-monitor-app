@@ -1,12 +1,11 @@
 package mx.com.earr.earthquakemonitorapp
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import mx.com.earr.earthquakemonitorapp.databinding.EqListItemBinding
 
 class EarthquakeAdapter :
     ListAdapter<Earthquake, EarthquakeAdapter.EarthquakeViewHolder>(DiffCallback) {
@@ -22,18 +21,20 @@ class EarthquakeAdapter :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EarthquakeViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.eq_list_item, parent, false)
-        return EarthquakeViewHolder(view)
+        val binding = EqListItemBinding.inflate(LayoutInflater.from(parent.context))
+        return EarthquakeViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: EarthquakeViewHolder, position: Int) {
         val earthquake = getItem(position)
-        holder.magnitudeText.text = earthquake.magnitude.toString()
-        holder.placeText.text = earthquake.place.toString()
+        holder.bind(earthquake)
     }
 
-    inner class EarthquakeViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val magnitudeText = view.findViewById<TextView>(R.id.eqMagnitudeText)
-        val placeText = view.findViewById<TextView>(R.id.eqPlaceText)
+    inner class EarthquakeViewHolder(private val binding: EqListItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(earthquake: Earthquake) {
+            binding.eqMagnitudeText.text = earthquake.magnitude.toString()
+            binding.eqPlaceText.text = earthquake.place
+        }
     }
 }
